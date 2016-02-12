@@ -66,12 +66,13 @@ $(function() {
           * clicked and hides when clicked again.
           */
         it('Menu changes visibility when clicked', function() {
-           $('a.menu-icon-link').click();
-           expect(body).not.toHaveClass('menu-hidden');
+            var icon = $('a.menu-icon-link');
+            icon.click();
+            expect(body).not.toHaveClass('menu-hidden');
 
-           //Test that the menu hides again on second click.
-           $('a.menu-icon-link').click();
-           expect(body).toHaveClass('menu-hidden');
+            //Test that the menu hides again on second click.
+            icon.click();
+            expect(body).toHaveClass('menu-hidden');
         });
     });
 
@@ -87,10 +88,10 @@ $(function() {
             loadFeed(0,done);
         });
 
-         it('loadFeed function creates at least one element', function() {
+        it('loadFeed function creates at least one element', function() {
             var entry = $('.entry');
             expect(entry).toExist();
-         });
+        });
      });
 
     /* This is a test suite named "New Feed Selection"*/
